@@ -1,0 +1,614 @@
+/* Custom Styles for Blog Box */
+
+:root {
+    /* Cores Primárias */
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --primary-darker: #004085;
+    
+    /* Cores Secundárias */
+    --secondary-color: #6c757d;
+    --info-color: #17a2b8;
+    --info-dark: #138496;
+    --success-color: #28a745;
+    
+    /* Cores de Fundo */
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --bg-gray-light: #f1f3f5;
+    
+    /* Cores de Borda */
+    --border-light: #dee2e6;
+    --border-gray: #e9ecef;
+    
+    /* Cores de Texto */
+    --text-dark: #333;
+    --text-muted: #999999;
+    --text-gray: #555;
+    --text-placeholder: #adb5bd;
+    
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    --gradient-primary-hover: linear-gradient(135deg, var(--primary-dark), var(--primary-darker));
+    --gradient-info: linear-gradient(135deg, var(--info-color), var(--info-dark));
+    
+    /* Sombras */
+    --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --shadow-focus: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-card);
+    padding: 1rem 1.5rem !important; /* Reduzindo o padding do header */
+}
+
+header .nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 2px;
+}
+
+header .nav-link:hover {
+    background-color: var(--bg-gray-light);
+    color: var(--primary-color) !important;
+}
+
+header .nav-link.link-secondary {
+    color: var(--primary-color) !important;
+    background-color: var(--bg-gray-light);
+}
+
+header .form-control {
+    border-radius: 20px;
+    border: 1px solid var(--border-gray);
+    width: 250px;
+}
+
+header .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-focus);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-card);
+    border-radius: 12px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-gray-light);
+    color: var(--primary-color);
+}
+
+.dropdown-item i {
+    color: var(--text-muted);
+}
+
+.dropdown-item:hover i {
+    color: var(--primary-color);
+}
+
+/* Avatar no dropdown */
+header .avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    flex-shrink: 0;
+}
+
+/* Logo icon */
+header .bi-box-seam {
+    filter: drop-shadow(0 2px 4px rgba(0, 123, 255, 0.3));
+}
+
+/* Profile Avatar */
+.profile-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Profile Card with Background */
+.profile-card {
+    overflow: hidden;
+    position: relative;
+}
+
+.profile-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: var(--bg-white);
+    display: none; /* Ocultando o background colorido */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+.profile-card .card-body {
+    background: var(--bg-white);
+    padding-top: 2rem;
+    z-index: 2;
+}
+
+.profile-card .avatar-circle {
+    border: 4px solid var(--bg-white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .stats-row {
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.avatar-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+}
+
+.avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    flex-shrink: 0;
+}
+
+/* Stats */
+.stats-row {
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 1rem 0;
+    margin: 1rem 0;
+}
+
+.stat-item {
+    font-size: 0.85rem;
+}
+
+.stat-item .fw-bold {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    padding: 1rem 0;
+}
+
+.menu-section {
+    padding: 0;
+}
+
+.menu-item {
+    padding: 0.9rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 0.3rem 0.3rem 0.3rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.9rem;
+    background-color: transparent;
+    border: none;
+}
+
+.menu-item:hover {
+    background-color: var(--bg-gray-light);
+    color: var(--text-dark);
+}
+
+.menu-item.active {
+    background-color: transparent;
+    color: var(--text-dark);
+}
+
+.menu-item.active:hover {
+    background-color: var(--bg-gray-light);
+}
+
+.menu-item i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: left;
+    color: var(--primary-color);
+}
+
+.menu-item:hover i {
+    color: var(--primary-dark);
+}
+
+.menu-item span {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Separador do menu */
+.sidebar-menu hr {
+    border-color: var(--border-light);
+    margin: 1rem 1.5rem;
+    opacity: 0.3;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Post Options */
+.post-options .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Post Actions */
+.post-actions .btn {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-weight: 500;
+    border: none !important;
+    text-decoration: none;
+}
+
+.post-actions .btn-link {
+    padding: 0.4rem 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.post-actions .btn-link:hover {
+    background-color: var(--bg-gray-light);
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* Botão Seguir personalizado */
+.btn-outline-primary.bg-white {
+    background-color: var(--bg-white) !important;
+    border: 1px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.btn-outline-primary.bg-white:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Form Controls */
+.form-control {
+    border: 1px solid var(--border-gray);
+    border-radius: 25px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-focus);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-primary:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-secondary {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+.btn-outline-info {
+    border-color: var(--info-color);
+    color: var(--info-color);
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-text {
+        display: none;
+    }
+    
+    .stats-row {
+        font-size: 0.8rem;
+    }
+    
+    .sidebar-menu {
+        display: none;
+    }
+    
+    .menu-item {
+        justify-content: center;
+    }
+}
+
+/* Hover effects */
+.card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Text styling */
+h6 {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Icons */
+.navbar .bi {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar .bi:hover {
+    color: var(--primary-dark) !important;
+}
+
+/* Custom spacing */
+.mt-4 {
+    margin-top: 2rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 2rem !important;
+}
+
+/* Profile card specific styles */
+.profile-avatar .avatar-circle {
+    background: var(--gradient-info);
+}
+
+/* Post content styling */
+.card p {
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+}
+
+/* Button group spacing */
+.btn + .btn {
+    margin-left: 0.5rem;
+}
+
+/* Navbar icons */
+.navbar .fs-5 {
+    font-size: 1.1rem !important;
+}
+
+/* Create post input */
+.form-control::placeholder {
+    color: var(--text-placeholder);
+    font-style: italic;
+}
+
+/* Create Post Box Styles */
+.create-post-box {
+    transition: all 0.3s ease;
+}
+
+.create-post-box:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#post-input-trigger {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #e9ecef;
+    border-radius: 25px;
+    padding: 12px 20px;
+    background-color: #f8f9fa;
+}
+
+#post-input-trigger:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+#post-textarea {
+    min-height: 120px;
+    resize: vertical;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: border-color 0.2s ease;
+    font-family: inherit;
+}
+
+#post-textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.post-options {
+    border-top: 1px solid #e9ecef;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.media-options .btn {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.media-options .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.media-options .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.media-options .btn-outline-success:hover {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.media-options .btn-outline-warning:hover {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: white;
+}
+
+/* Expanded post form styling */
+#expanded-post-input .avatar-small {
+    margin-right: 12px;
+}
+
+#expanded-post-input .user-info h6 {
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+#expanded-post-input .user-info small {
+    color: var(--text-muted);
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.action-buttons .btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.action-buttons .btn-primary:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.action-buttons .btn-secondary {
+    background: transparent;
+    border: 1px solid #dee2e6;
+    color: var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.action-buttons .btn-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+    color: var(--text-primary);
+}
+
+/* Smooth transitions */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
