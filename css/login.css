@@ -1,0 +1,363 @@
+/* Login Page Styles - Compatível com o header principal */
+
+/* Container principal do login */
+.login-wrapper {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    min-height: 600px;
+    margin-bottom: 2rem;
+}
+
+/* Seção do Banner */
+.banner-section {
+    flex: 1;
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    min-height: 600px;
+}
+
+.banner-section.slide-out {
+    flex: 0;
+    overflow: hidden;
+}
+
+.banner-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: transform 0.6s ease;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+    padding: 2rem;
+    transition: opacity 0.6s ease;
+}
+
+.banner-section.slide-out .banner-overlay {
+    opacity: 0;
+}
+
+.banner-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-overlay p {
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Seção dos Formulários */
+.forms-section {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.forms-section.expanded {
+    flex: 2;
+    min-height: 70vh !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Formulários */
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.form-container.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+}
+
+/* Usar as mesmas variáveis CSS do style.css principal */
+.login-wrapper .form-control {
+    background-color: var(--bg-gray-light);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.login-wrapper .form-control:focus {
+    background-color: var(--bg-white);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.login-wrapper .form-control::placeholder {
+    color: var(--text-placeholder);
+    font-size: 0.9rem;
+}
+
+/* Labels usando variáveis */
+.login-wrapper .form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Botões usando variáveis */
+.login-wrapper .btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.login-wrapper .btn-primary:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Select usando variáveis */
+.login-wrapper .form-select {
+    background-color: var(--bg-gray-light);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-wrapper .form-select:focus {
+    background-color: var(--bg-white);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Links usando variáveis */
+.login-wrapper a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-wrapper a:hover {
+    color: var(--primary-dark);
+}
+
+/* Checkbox usando variáveis */
+.login-wrapper .form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.login-wrapper .form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+/* Estados de validação */
+.login-wrapper .form-control.is-valid {
+    border-color: var(--success-color);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.3.25.6-.74L5.5 4.4l-.6-.74-1.6 1.97z'/%3e%3c/svg%3e");
+}
+
+.login-wrapper .form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 4.6 2.4 2.8m-2.4 0 2.4-2.8'/%3e%3c/svg%3e");
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+        min-height: auto;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .banner-section {
+        min-height: 300px;
+        order: 1;
+    }
+    
+    .banner-section.slide-out {
+        min-height: 100px;
+        flex: 0 0 100px;
+    }
+    
+    .forms-section {
+        order: 2;
+        min-height: 500px;
+    }
+    
+    .forms-section.expanded {
+        min-height: 100vh !important;
+        padding: 1rem;
+    }
+    
+    .banner-overlay h2 {
+        font-size: 1.8rem;
+    }
+    
+    .form-content {
+        padding: 1.5rem;
+    }
+    
+    .form-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-overlay {
+        padding: 1rem;
+    }
+    
+    .banner-overlay h2 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-overlay p {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para melhor responsividade do formulário */
+.login-wrapper.active {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: fit-content !important;
+}
+
+/* Garantir que os campos não saiam da tela */
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+/* Animações */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.form-container.active .form-content {
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Loading state */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Correção para conflitos de CSS */
+.login-wrapper * {
+    box-sizing: border-box;
+}
+
+/* Garantir que o header não seja afetado */
+header {
+    background: var(--bg-white);
+    box-shadow: var(--shadow-card);
+}
+
+/* Ajustes para o avatar no header */
+.avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-height: 800px) {
+    .forms-section.expanded {
+        min-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+    
+    .banner-container.slide-out {
+        height: 10vh !important;
+    }
+}
