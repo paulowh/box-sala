@@ -37,10 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = postTextarea.value.trim();
             if (content) {
                 createNewPost(content);
-                // Voltar ao estado inicial
-                expandedPostInput.classList.add('d-none');
-                simplePostInput.classList.remove('d-none');
-                originalPostOptions.classList.remove('d-none');
                 postTextarea.value = '';
                 
                 // Mostrar notificação
@@ -49,72 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Funcionalidade dos botões de curtir/descurtir
-    const likeButtons = document.querySelectorAll('.btn-link');
-    
-    likeButtons.forEach(button => {
-        if (button.innerHTML.includes('hand-thumbs-up')) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Toggle active state
-                if (this.classList.contains('active')) {
-                    this.classList.remove('active');
-                    this.style.backgroundColor = '';
-                    this.style.color = '';
-                } else {
-                    this.classList.add('active');
-                    this.style.backgroundColor = '#007bff';
-                    this.style.color = 'white';
-                }
-            });
-        }
-    });
-
-    const dislikeButtons = document.querySelectorAll('.btn-link');
-    
-    dislikeButtons.forEach(button => {
-        if (button.innerHTML.includes('hand-thumbs-down')) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Toggle active state
-                if (this.classList.contains('active')) {
-                    this.classList.remove('active');
-                    this.style.backgroundColor = '';
-                    this.style.color = '';
-                } else {
-                    this.classList.add('active');
-                    this.style.backgroundColor = '#6c757d';
-                    this.style.color = 'white';
-                }
-            });
-        }
-    });
-
-    // Funcionalidade do botão seguir/seguindo
-    const followButtons = document.querySelectorAll('.btn');
-    
-    followButtons.forEach(button => {
-        if (button.innerHTML.includes('SEGUIR') && !button.innerHTML.includes('SEGUINDO')) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                this.innerHTML = '<i class="bi bi-person-check me-1"></i> SEGUINDO';
-                this.classList.remove('btn-outline-primary', 'bg-white');
-                this.classList.add('btn-primary');
-            });
-        } else if (button.innerHTML.includes('SEGUINDO')) {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                this.innerHTML = '<i class="bi bi-person-plus me-1"></i> SEGUIR';
-                this.classList.remove('btn-primary');
-                this.classList.add('btn-outline-primary', 'bg-white');
-            });
-        }
-    });
-
     // Funcionalidade do menu lateral
     const menuItems = document.querySelectorAll('.menu-item');
     
@@ -142,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <i class="bi bi-person-fill text-white"></i>
                         </div>
                         <div class="flex-grow-1">
-                            <h6 class="mb-0">ESTOQUE DO REINO</h6>
-                            <small class="text-muted">@StokReno89</small>
+                            <h6 class="mb-0 text-uppercase">estudante do reino</h6>
+                            <small class="text-muted">@tTeseu</small>
                         </div>
                         <span class="text-muted small">agora</span>
                     </div>
